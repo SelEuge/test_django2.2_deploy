@@ -14,4 +14,11 @@ from django.core.wsgi import get_wsgi_application
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_bigbox.settings')
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_bigbox.settings.local')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_bigbox.settings.production')
-application = get_wsgi_application()
+# La sig línea sirve entorno local
+# application = get_wsgi_application()
+
+# Cambiamos la línea anterior para usar en produc, soluciona problema de archivos estáticos
+from dj_static import Cling
+application = Cling(get_wsgi_application())
+
+
