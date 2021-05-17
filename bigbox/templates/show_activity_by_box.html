@@ -1,0 +1,10 @@
+<h1>Detalle de actividad</h1>
+<ul>
+    {% for a in object_list %}
+        <li>Name: {{a.name}}</li>
+        <li>Name Internal: {{a.internal_name}}</li>
+        <li>Description: {{a.description}}</li>
+        <li>Purchase Available: {{a.purchase_available}}</li>
+        <li>Category_id: {{a.category_id}}</li>
+    {% endfor%}
+</ul>

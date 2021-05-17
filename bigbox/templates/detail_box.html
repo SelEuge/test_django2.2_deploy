@@ -1,0 +1,24 @@
+<h1>Detalle de Contenido Box</h1>
+
+<ul>
+    <p>Información del BOX</p>
+    {% for b in object_list %}
+        <li>Name: {{b.name}}</li>
+        <li>Name Internal: {{b.internal_name}}</li>
+        <li>Description:{{b.description}}</li>
+        <li>Category:{{b.category_id}}</li>
+        <p>Algunas de las actividades</p>
+        <ul>
+            {% for activity in b.activities.all %}
+                 {% if  forloop.counter <= 5 %}
+                    <li>{{forloop.counter}} - Activity Name:{{activity.name}}</li>
+                 {% endif %}
+            {% endfor %}
+
+        </ul>
+
+     {% endfor%}
+    <p><a href="{% url 'box'%}">Más actividades</a></p>
+
+
+</ul>
