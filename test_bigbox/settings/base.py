@@ -27,7 +27,6 @@ SECRET_KEY = 'kxw$oanr=g!e9iw&g84z73ja7fa^9!@s-j-0r0c9(w0)%@3kfq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = []
 
 # Application definition

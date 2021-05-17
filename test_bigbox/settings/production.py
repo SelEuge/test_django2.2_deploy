@@ -13,3 +13,5 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+
+STATICFILES_DIRS = (BASE_DIR, 'static')
