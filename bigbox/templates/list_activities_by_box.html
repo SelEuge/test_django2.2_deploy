@@ -1,7 +1,7 @@
 <h1>Actividades incluidas en esta Box</h1>
 <ul>
     {% for a in object_list %}
-        <li>Name: {{a.name | upper}}</li>
+        <li><a href="{% url 'activities' a.id %}">Name: {{a.name | upper}}</a></li>
     {% endfor%}
     <br>
 

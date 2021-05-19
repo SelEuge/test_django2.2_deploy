@@ -3,7 +3,7 @@
 <ul>
     <p>Información del BOX</p>
     {% for b in object_list %}
-        <li>Name: {{b.name}}</li>
+        <li>Name:{{b.name}}</li>
         <li>Name Internal: {{b.internal_name}}</li>
         <li>Description:{{b.description}}</li>
         <li>Category:{{b.category_id}}</li>
@@ -16,9 +16,7 @@
             {% endfor %}
 
         </ul>
-
+           <p></p><a href="{% url 'activities' b.id %}">Mas actividades</a></p>
      {% endfor%}
-    <p><a href="{% url 'box'%}">Más actividades</a></p>
-
 
 </ul>
