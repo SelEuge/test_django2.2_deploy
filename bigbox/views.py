@@ -11,6 +11,11 @@ class ListAllBoxes(ListView):
     context_object_name = 'boxes'
 
 
+def home(request):
+    boxes = Box.objects.all()
+    return render(request, 'list_all_boxes.html', {'boxes': boxes})
+
+
 # 4) b) i
 class DetailBox(ListView):
     template_name = 'detail_box.html'
@@ -49,16 +54,7 @@ class ShowActivityByBox(ListView):
 
 
 # 5) c) i
-class SearchBoxBySlug(ListView):
-    template_name = 'detail_box.html'
-    # queryset = Box.objects.filter(slug='prueba')
-    model = Box
-
-    def get_queryset(self):
-        return Box.objects.filter(slug=self.kwargs['slug'])
-
-    """def get_queryset(self):
-        slug = self.kwargs['slug']
-        # context_object_name = 'boxes'
-        boxes = Box.objects.filter(slug=slug)
-        return Box.objects.filter(slug=slug)"""
+def SearchBoxBySlug(request, slug):
+    box = Box.objects.get(slug=slug)
+    print(box)
+    return render(request, 'detailsxslug.html', {'boxes_bySlug': box})

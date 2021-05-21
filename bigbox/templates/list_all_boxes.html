@@ -2,6 +2,5 @@
 
 <ul>
     {% for b in boxes %}
-        <li>{{b.name}}</li>
+    <li><a href="{% url 'boxes_bySlug' b.slug%}">{{b.name}}</a></li>
     {% endfor%}
-</ul>
