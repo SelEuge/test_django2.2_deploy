@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
+    path('users/', include('quickstart.urls')),
     path('admin/', admin.site.urls),
     re_path('', include('bigbox.urls')),
     path('__debug__/', include(debug_toolbar.urls)),

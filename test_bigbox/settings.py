@@ -22,11 +22,13 @@ BASE_DIR = Path(__file__).ancestor(3)
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kxw$oanr=g!e9iw&g84z73ja7fa^9!@s-j-0r0c9(w0)%@3kfq'
+# SECRET_KEY = 'kxw$oanr=g!e9iw&g84z73ja7fa^9!@s-j-0r0c9(w0)%@3kfq'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+DEBUG = os.environ.get('DEBUG')
+# DEBUG = False
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['*']
@@ -43,6 +45,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'bigbox.apps.BigboxConfig',
     'polls.apps.PollsConfig',
+    'rest_framework',
+    'quickstart.apps.QuickstartConfig'
 ]
 
 MIDDLEWARE = [
@@ -85,9 +89,9 @@ WSGI_APPLICATION = 'test_bigbox.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bigbox',
-        'USER': 'postgres',
-        'PASSWORD': 'bigbox',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -145,4 +149,9 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'"""
 
 INTERNAL_IPS = '127.0.0.1'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
