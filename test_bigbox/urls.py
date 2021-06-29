@@ -20,12 +20,10 @@ from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('users/', include('quickstart.urls')),
-    path('admin/', admin.site.urls),
-    re_path('', include('bigbox.urls')),
-    path('__debug__/', include(debug_toolbar.urls)),
-]
-# +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path('polls/', include('polls.urls')),
+                  path('users/', include('quickstart.urls')),
+                  path('admin/', admin.site.urls),
+                  re_path('', include('bigbox.urls')),
+                  path('__debug__/', include(debug_toolbar.urls)),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
