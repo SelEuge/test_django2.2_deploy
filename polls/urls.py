@@ -14,7 +14,7 @@ app_name = 'polls'
 
 # -------------------LLAMAN A LAS VISTAS GENERICAS-------------------
 urlpatterns = [
-    path('', views.IndexView, name='index'),
+    path('', views.IndexView.as_view(), name='index'),
     path('<int:pk>', views.DetailView.as_view(), name='details'),
     # path('specifics/<int:question_id>/', views.detail, name='details'),
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
