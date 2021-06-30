@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Box, Activity
+from django.conf import settings
 
 
 # Create your views here.
@@ -32,7 +33,7 @@ class DetailBox(ListView):
 class ListActivitiesByBox(ListView):
     template_name = 'list_activities_by_box.html'
     context_object_name = 'activities'
-    paginate_by = 20
+    paginate_by = settings.PAGINADOR
 
     def get_queryset(self):
         box_id = self.kwargs['box_id']

@@ -126,3 +126,5 @@ REST_FRAMEWORK = {
 }
 
 NUMBEROUT = os.environ.get('NUMBEROUT')
+STR_PAGINADOR = os.environ.get('PAGINADOR', '20')
+PAGINADOR = int(STR_PAGINADOR)
