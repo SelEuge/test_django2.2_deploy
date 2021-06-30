@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'historical_data.apps.HistoricalDataConfig',
     'rest_framework',
     'quickstart.apps.QuickstartConfig',
+    'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'test_bigbox.wsgi.application'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
