@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
     'polls.apps.PollsConfig',
-    'historical_data.apps.HistoricalDataConfig'
+    'historical_data.apps.HistoricalDataConfig',
+    'rest_framework',
+    'quickstart.apps.QuickstartConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,5 +120,9 @@ STATIC_URL = '/static/'
 
 INTERNAL_IPS = '127.0.0.1'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
-
+NUMBEROUT = os.environ.get('NUMBEROUT')
