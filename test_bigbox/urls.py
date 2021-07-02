@@ -16,6 +16,7 @@ Including another URLconf
 import debug_toolbar
 from django.contrib import admin
 from django.urls import path, re_path, include
+from graphene_django.views import GraphQLView
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,6 +25,7 @@ urlpatterns = [
                   path('polls/', include('polls.urls')),
                   path('quickstart/', include('quickstart.urls')),
                   path('', include('snippets.urls')),
+                  path("graphql", GraphQLView.as_view(graphiql=True)),
                   path('admin/', admin.site.urls),
                   re_path('', include('bigbox.urls')),
                   path('__debug__/', include(debug_toolbar.urls)),

@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'quickstart.apps.QuickstartConfig',
     'snippets.apps.SnippetsConfig',
+    'graphene_django',
+    'ingredients',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,10 @@ INTERNAL_IPS = '127.0.0.1'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
+}
+
+GRAPHENE = {
+    "SCHEMA": "django_root.schema.schema"
 }
 
 NUMBEROUT = os.environ.get('NUMBEROUT')
