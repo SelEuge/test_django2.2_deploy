@@ -128,7 +128,7 @@ REST_FRAMEWORK = {
 }
 
 GRAPHENE = {
-    "SCHEMA": "django_root.schema.schema"
+    "SCHEMA": "ingredients.schema.schema"
 }
 
 NUMBEROUT = os.environ.get('NUMBEROUT')

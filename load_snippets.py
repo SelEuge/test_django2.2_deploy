@@ -6,9 +6,11 @@ from pygments import highlight
 from snippets.models import Snippet
 from django.contrib.auth.models import User
 from django.utils import timezone
-u=User.objects.get(pk=1)
-for i in range (201):        
-    s=Snippet(created=timezone.now(),title="Valeria",code="Valeria",linenos="Valeria",language="Java",style="Abap",owner="1",highlighted="1")
+
+u = User.objects.get(pk=1)
+for i in range(1000):
+    s = Snippet(created=timezone.now(), title="Valeria", code="Valeria", linenos=False, language="Java",
+                style="abap", owner_id=u.id, highlighted="1")
     s.save()
     print('Creando snippet: ', i)
     pass
