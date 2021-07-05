@@ -122,11 +122,13 @@ STATIC_URL = '/static/'
 
 INTERNAL_IPS = '127.0.0.1'
 
+STR_PAGINADOR_API = os.environ.get('PAGINADOR_API', '15')
+PAGINADOR_API = int(STR_PAGINADOR_API)
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': PAGINADOR_API
 }
-
 GRAPHENE = {
     "SCHEMA": "ingredients.schema.schema"
 }
