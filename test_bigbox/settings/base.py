@@ -126,7 +126,7 @@ STR_PAGINADOR_API = os.environ.get('PAGINADOR_API', '15')
 PAGINADOR_API = int(STR_PAGINADOR_API)
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': PAGINADOR_API
 }
 GRAPHENE = {
